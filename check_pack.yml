@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tasks:
+  - name: get the rpm or apt package facts
+    package_facts:
+      manager: "auto"
+
+  - name: show apache2 version
+    debug: var=ansible_facts

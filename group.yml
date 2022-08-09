@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: Create resource group1
+      azure_rm_resourcegroup:
+        name: slazpansoc05
+        location: westeurope
+      register: rg
+    - debug:
+        var: rg
