@@ -2,8 +2,10 @@
 - hosts: all
   become: yes
 
-  vars_files:
-    - vars.yml
+  vars:
+    - db_user: app1user
+      db_password: app1user
+      db_name: app1
 
   pre_tasks:
     - name: "Install packages"
