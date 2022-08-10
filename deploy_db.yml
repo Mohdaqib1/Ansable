@@ -14,7 +14,7 @@
         state: present
 
     - name: "Install Python packages"
-      pip: 
+      ansible.builtin.pip: 
         name: psycopg2-binary
         state: present
 
