@@ -16,7 +16,7 @@
     - name: "Install Python packages"
       ansible.builtin.pip: 
         name: psycopg2-binary
-        state: present
+        state: forcereinstall
 
   tasks:
     - name: "Initialize PostgreSQL"
