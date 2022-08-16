@@ -8,9 +8,7 @@
   pre_tasks:
     - name: "Install packages"
       apt:
-        name: 
-          - postgresql
-          - postgresql-server
+        name: postgresql-server
         state: present
 
     # - name: "Install Python packages"
