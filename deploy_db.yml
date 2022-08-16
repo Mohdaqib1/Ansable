@@ -14,9 +14,10 @@
         state: present
 
     - name: "Install Python packages"
-      ansible.builtin.pip: 
-        name: psycopg2-binary
-        state: forcereinstall
+      pip: 
+        name: 
+          - psycopg2-binary
+        state: present
 
   tasks:
     - name: "Initialize PostgreSQL"
@@ -24,10 +25,13 @@
       when: not postgres_data.stat.exists
 
     - name: "Start and enable services"
-      service: "name={{ item }} state=started enabled=yes"
-      with_items:
-        - postgresql
+      service:
+        name: postgresql 
+        state: started 
+        enabled: yes
 
   handlers:
     - name: restart postgres
-      service: name=postgresql state=restarted
+      service: 
+        name: postgresql 
+        state: restarted
