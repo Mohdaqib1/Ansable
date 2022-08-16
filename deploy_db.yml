@@ -18,19 +18,19 @@
         name: python3-psycopg2
         state: present
 
-  tasks:
-    - name: "Initialize PostgreSQL"
-      shell: "postgresql-setup initdb"
-      when: not postgres_data.stat.exists
+  # tasks:
+  #   - name: "Initialize PostgreSQL"
+  #     shell: "postgresql-setup initdb"
+  #     when: not postgres_data.stat.exists
 
-    - name: "Start and enable services"
-      service:
-        name: postgresql 
-        state: started 
-        enabled: yes
+    # - name: "Start and enable services"
+    #   service:
+    #     name: postgresql 
+    #     state: started 
+    #     enabled: yes
 
-  handlers:
-    - name: restart postgres
-      service: 
-        name: postgresql 
-        state: restarted
+  # handlers:
+  #   - name: restart postgres
+  #     service: 
+  #       name: postgresql 
+  #       state: restarted
