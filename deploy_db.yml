@@ -5,11 +5,13 @@
   vars_files:
     - vars.yml
 
-  pre_tasks:
-    - name: "Install packages"
-      apt:
-        name: postgresql-server
-        state: present
+  # pre_tasks:
+  #   - name: "Install packages"
+  #     apt:
+  #       name: 
+  #         - postgresql
+  #         - postgresql-server
+  #       state: present
 
     # - name: "Install Python packages"
     #   yum: 
