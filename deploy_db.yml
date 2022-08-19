@@ -19,10 +19,10 @@
         - psycopg2-binary
 
   tasks:
-    - name: "Find out if PostgreSQL is initialized"
-      ansible.builtin.stat:
-        path: "/var/lib/pgsql/data/pg_hba.conf"
-      register: postgres_data
+    # - name: "Find out if PostgreSQL is initialized"
+    #   ansible.builtin.stat:
+    #     path: "/var/lib/pgsql/data/pg_hba.conf"
+    #   register: postgres_data
 
     - name: "Initialize PostgreSQL"
       shell: "postgresql-setup initdb"
